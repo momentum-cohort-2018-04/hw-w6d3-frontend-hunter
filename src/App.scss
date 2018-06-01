@@ -1,3 +1,13 @@
+@charset "utf-8";
+
+
+// 1. Import the initial variables
+@import "../node_modules/bulma/sass/utilities/initial-variables";
+
+// 2. Set your own initial variables
+// Update the sans-serif font family
+$family-sans-serif: "Helvetica", "Arial", sans-serif;
+
 .App {
   text-align: center;
 }
@@ -5,3 +15,7 @@
 .photo {
   margin: 20px;
 }
+// 4. Import the rest of Bulma
+@import "../node_modules/bulma/bulma";
+
+

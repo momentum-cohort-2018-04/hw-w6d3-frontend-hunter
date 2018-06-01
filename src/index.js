@@ -5,6 +5,5 @@ import App from './App'
 import registerServiceWorker from './registerServiceWorker'
 import 'shoelace-css/dist/shoelace.css'
 
-
 ReactDOM.render(<App />, document.getElementById('root'))
 registerServiceWorker()

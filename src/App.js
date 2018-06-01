@@ -46,7 +46,9 @@ class App extends Component {
           </form>
           <div className='search-results'>
             {this.state.searchArray.map((pic, idx) => (
-              <Photo pic={pic} idx={idx} />
+              <div key={idx} className='photo red'>
+                <Photo pic={pic} />
+              </div>
             ))}
           </div>
         </div>
@@ -56,32 +58,52 @@ class App extends Component {
 }
 
 class Photo extends Component {
+  constructor () {
+    super()
+    this.state = {
+      isExpanded: false
+    }
+    this.expand = this.expand.bind(this)
+  }
+
+  expand () {
+    this.setState({
+      isExpanded: !this.state.isExpanded
+    })
+  }
+
   render () {
     let pic = this.props.pic
-    let idx = this.props.idx
     return (
       <div>
-        <div className='photo' key={idx}>
-          <img src={pic.urls.thumb} />
-        </div>
+        <Modal isExpanded={this.state.isExpanded} src={pic.urls.regular} expand={this.expand} />
+        <img src={pic.urls.thumb} alt='' onClick={this.expand} />
       </div>
     )
   }
 }
 
-// class Form extends Component {
-//   render () {
-//     let photoSearch = this.props.photoSearch
-//     // console.log(this.props.photoSearch)
-//     return (
-//       <form onSubmit={photoSearch()}>
-//         <div className='input-group'>
-//           <input type='text' id='search' />
-//           <button type='sumbit' className='search-button'>Search</button>
-//         </div>
-//       </form>
-//     )
-//   }
-// }
+class Modal extends Component {
+  render () {
+    let isExpanded = this.props.isExpanded
+    let src = this.props.src
+    let expand = this.props.expand
+    if (isExpanded === true) {
+      return (
+        <div className='modal is-active'>
+          <div className='modal-background' />
+          <div className='modal-content'>
+            <p className='image is-4by3'>
+              <img src={src} alt='' />
+            </p>
+          </div>
+          <button className='modal-close is-large' aria-label='close' onClick={expand} />
+        </div>
+      )
+    } else {
+      return null
+    }
+  }
+}
 
 export default App
