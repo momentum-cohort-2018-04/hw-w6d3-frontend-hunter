@@ -3,11 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "dotenv": "^5.0.1",
     "node-sass-chokidar": "^1.3.0",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
     "react-scripts": "1.1.4",
-    "shoelace-css": "^1.0.0-beta24"
+    "shoelace-css": "^1.0.0-beta24",
+    "superagent": "^3.8.3"
   },
   "scripts": {
     "build-css": "node-sass-chokidar src/ -o src/",
