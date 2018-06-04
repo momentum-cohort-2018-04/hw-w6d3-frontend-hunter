@@ -52,12 +52,12 @@ $family-sans-serif: "Helvetica", "Arial", sans-serif;
   color: #DCDCDC;
 }
 
-h2 a {
+.link {
   text-decoration: none;
   color: #DCDCDC;
 
   &:hover {
-    color: white;
+    color: deepskyblue;
     text-decoration: none;
   }
 }

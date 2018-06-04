@@ -32,11 +32,11 @@
 .info {
   color: #DCDCDC; }
 
-h2 a {
+.link {
   text-decoration: none;
   color: #DCDCDC; }
-  h2 a:hover {
-    color: white;
+  .link:hover {
+    color: deepskyblue;
     text-decoration: none; }
 
 @media screen and (min-width: 768px) {

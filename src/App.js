@@ -25,7 +25,6 @@ class App extends Component {
         this.setState({
           searchArray: response.body.results
         })
-        console.log(this.state.searchArray)
         const field = document.querySelector('.input-group')
         const error = document.querySelector('.error')
         if (this.state.searchArray.length === 0) {
