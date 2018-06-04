@@ -1,0 +1,85 @@
+@charset "utf-8";
+
+
+// 1. Import the initial variables
+@import "../node_modules/bulma/sass/utilities/initial-variables";
+
+// 2. Set your own initial variables
+// Update the sans-serif font family
+$family-sans-serif: "Helvetica", "Arial", sans-serif;
+
+.App {
+  text-align: center;
+}
+
+.header {
+  background: #aaa;
+  margin-bottom: 25px;
+
+  &__title {
+   padding: 20px;
+   font-weight: bold;
+   color: white; 
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.error {
+  margin-top: 200px;
+}
+
+.search-results {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.thumb {
+  cursor: pointer;
+  box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  width: 175px;
+  height: 175px;
+}
+
+.photo {
+  margin: 20px 0;
+  flex-basis: 50%;
+}
+
+.info {
+  color: #DCDCDC;
+}
+
+.link {
+  text-decoration: none;
+  color: #DCDCDC;
+
+  &:hover {
+    color: deepskyblue;
+    text-decoration: none;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .photo {
+    flex-basis: 33%;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .photo {
+    flex-basis: 25%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .photo {
+    flex-basis: 20%;
+  }
+}
+// 4. Import the rest of Bulma
+@import "../node_modules/bulma/bulma";
+
+
